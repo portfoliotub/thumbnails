@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Kali — Thumbnail design samples: casino, Roblox and general YouTube thumbnails.">
+  <title>Kali — Thumbnails</title>
+  <style>
+    :root { --ink: #111; --muted: #777; --line: #e5e5e5; --bg: #fff; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.5; -webkit-font-smoothing: antialiased; }
+    .wrap { max-width: 1200px; margin: 0 auto; padding: 56px 24px 64px; }
+    header { margin-bottom: 40px; }
+    .kicker { font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); margin: 0 0 12px; }
+    h1 { font-size: clamp(2.4rem, 6vw, 3.6rem); line-height: 1.05; margin: 0 0 12px; font-weight: 700; letter-spacing: -0.02em; }
+    .sub { color: var(--muted); margin: 0 0 20px; max-width: 34em; }
+    .mail { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--ink); font-size: 15px; }
+    .mail:hover { color: var(--muted); border-color: var(--muted); }
+    .filters { display: flex; flex-wrap: wrap; gap: 8px 28px; padding: 16px 0; margin-bottom: 32px;
+      border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .filter { appearance: none; background: none; border: 0; padding: 4px 0; cursor: pointer;
+      font: inherit; font-size: 15px; color: var(--muted); }
+    .filter span { font-size: 12px; color: #bbb; }
+    .filter:hover { color: var(--ink); }
+    .filter.active { color: var(--ink); box-shadow: inset 0 -1px 0 var(--ink); }
+    .grid { columns: 3; column-gap: 20px; }
+    @media (max-width: 900px) { .grid { columns: 2; } }
+    @media (max-width: 560px) { .grid { columns: 1; } .wrap { padding-top: 40px; } }
+    .item { break-inside: avoid; margin: 0 0 28px; }
+    .item.hidden { display: none; }
+    .thumb { display: block; width: 100%; padding: 0; border: 0; background: #f4f4f4; cursor: zoom-in; }
+    .thumb img { display: block; width: 100%; height: auto; }
+    .thumb:hover img { opacity: .92; }
+    figcaption { font-size: 13px; color: var(--muted); margin-top: 8px; }
+    footer { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--line);
+      color: var(--muted); font-size: 14px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+    footer a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--ink); }
+    .lightbox { position: fixed; inset: 0; z-index: 10; display: none; align-items: center; justify-content: center;
+      background: rgba(0,0,0,.93); padding: 20px; }
+    .lightbox.open { display: flex; }
+    .lightbox img { max-width: 94vw; max-height: 86vh; object-fit: contain; background: #000; }
+    .lightbox .cap { position: absolute; left: 0; right: 0; bottom: 18px; text-align: center; color: #ccc; font-size: 14px; }
+    .lb-btn { position: absolute; top: 50%; transform: translateY(-50%); width: 44px; height: 44px;
+      border: 1px solid rgba(255,255,255,.4); border-radius: 50%; background: transparent; color: #fff;
+      font-size: 20px; cursor: pointer; }
+    .lb-btn:hover { background: rgba(255,255,255,.12); }
+    .lb-prev { left: 16px; } .lb-next { right: 16px; }
+    .lb-close { position: absolute; top: 16px; right: 16px; width: 40px; height: 40px; border: 1px solid rgba(255,255,255,.4);
+      border-radius: 50%; background: transparent; color: #fff; font-size: 18px; cursor: pointer; }
+    @media (max-width: 560px) { .lb-prev { left: 6px; } .lb-next { right: 6px; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <p class="kicker">Kali — Thumbnail Design</p>
+      <h1>Thumbnails</h1>
+      <p class="sub">A selection of YouTube thumbnail designs — casino, Roblox and more. Click any thumbnail to view it full size.</p>
+      <a class="mail" href="mailto:kalidorxyz@gmail.com">kalidorxyz@gmail.com</a>
+    </header>
+    <nav class="filters" aria-label="Filter thumbnails">
+        <button type="button" class="filter active" data-filter="all">All <span>47</span></button>
+        <button type="button" class="filter" data-filter="casino">Casino <span>15</span></button>
+        <button type="button" class="filter" data-filter="roblox">Roblox <span>6</span></button>
+        <button type="button" class="filter" data-filter="general">General <span>26</span></button>
+    </nav>
+    <main class="grid" aria-label="Thumbnail samples">
+      <figure class="item" data-group="casino" data-index="1">
+        <button class="thumb" type="button" data-full="img/casino-01.jpg" data-caption="Casino 01" aria-label="View Casino 01 full size">
+          <img src="img/casino-01.jpg" alt="Casino 01 thumbnail" loading="lazy" width="1280" height="720">
+        </button>
+        <figcaption>Casino 01</figcaption>
+      </figure>
+      <figure class="item" data-group="casino" data-index="2">
+        <button class="thumb" type="button" data-full="img/casino-02.jpg" data-caption="Casino 02" aria-label="View Casino 02 full size">
+          <img src="img/casino-02.jpg" alt="Casino 02 thumbnail" loading="lazy" width="1280" height="720">
+        </button>
+        <figcaption>Casino 02</figcaption>
+      </figure>
+      <figure class="item" data-group="casino" data-index="3">
+        <button class="thumb" type="button" data-full="img/casino-03.jpg" data-caption="Casino 03" aria-label="View Casino 03 full size">
+          <img src="img/casino-03.jpg" alt="Casino 03 thumbnail" loading="lazy" width="1280" height="720">
+        </button>
+        <figcaption>Casino 03</figcaption>
+      </figure>
+      <figure class="item" data-group="casino" data-index="4">
+        <button class="thumb" type="button" data-full="img/casino-04.jpg" data-caption="Casino 04" aria-label="View Casino 04 full size">
+          <img src="img/casino-04.jpg" alt="Casino 04 thumbnail" loading="lazy" width="1280" height="720">
+        </button>
+        <figcaption>Casino 04</figcaption>
+      </figure>
+      <figure class="item" data-group="casino" data-index="5">
+        <button class="thumb" type="button" data-full="img/casino-05.jpg" data-caption="Casino 05" aria-label="View Casino 05 full size">
+          <img src="img/casino-05.jpg" alt="Casino 05 thumbnail" loading="lazy" width="1280" height="720">
+        </button>
+        <figcaption>Casino 05</figcaption>
+      </figure>
+      <figure class="item" data-group="casino" data-index="6">
+        <button class="thumb" type="button" data-full="img/casino-06.jpg" data-caption="Casino 06" aria-label="View Casino 06 full size">
+          <img src="img/casino-06.jpg" alt="Casino 06 thumbnail" loading="lazy" width="1280" height="720">
+        </button>
+        <figcaption>Casino 06</figcaption>
+      </figure>
+      <figure class="item" data-group="casino" data-index="7">
+        <button class="thumb" type="button" data-full="img/casino-07.jpg" data-caption="Casino 07" aria-label="View Casino 07 full size">
+          <img src="img/casino-07.jpg" alt="Casino 07 thumbnail" loading="lazy" width="1280" height="720">
+        </button>
+        <figcaption>Casino 07</figcaption>
+      </figure>
+      <figure class="item" data-group="casino" data-index="8">
+        <button class="thumb" type="button" data-full="img/casino-08.jpg" data-caption="Casino 08" aria-label="View Casino 08 full size">
+          <img src="img/casino-08.jpg" alt="Casino 08 thumbnail" loading="lazy" width="1280" height="720">
+        </button>
+        <figcaption>Casino 08</figcaption>
+      </figure>
+      <figure class="item" data-group="casino" data-index="9">
+        <button class="thumb" type="button" data-full="img/casino-09.jpg" data-caption="Casino 09" aria-label="View Casino 09 full size">
+          <img src="img/casino-09.jpg" alt="Casino 09 thumbnail" loading="lazy" width="1280" height="720">
+        </button>
+        <figcaption>Casino 09</figcaption>
+      </figure>
+      <figure class="item" data-group="casino" data-index="10">
+        <button class="thumb" type="button" data-full="img/casino-10.jpg" data-caption="Casino 10" aria-label="View Casino 10 full size">
+          <img src="img/casino-10.jpg" alt="Casino 10 thumbnail" loading="lazy" width="1280" height="720">
+        </button>
+        <figcaption>Casino 10</figcaption>
+      </figure>
+      <figure class="item" data-group="casino" data-index="11">
+        <button class="thumb" type="button" data-full="img/casino-11.jpg" data-caption="Casino 11" aria-label="View Casino 11 full size">
+          <img src="img/casino-11.jpg" alt="Casino 11 thumbnail" loading="lazy" width="1280" height="720">
+        </button>
+        <figcaption>Casino 11</figcaption>
+      </figure>
+      <figure class="item" data-group="casino" data-index="12">
+        <button class="thumb" type="button" data-full="img/casino-12.jpg" data-caption="Casino 12" aria-label="View Casino 12 full size">
+          <img src="img/casino-12.jpg" alt="Casino 12 thumbnail" loading="lazy" width="1280" height="720">
+        </button>
+        <figcaption>Casino 12</figcaption>
+      </figure>
+      <figure class="item" data-group="casino" data-index="13">
+        <button class="thumb" type="button" data-full="img/casino-13.jpg" data-caption="Casino 13" aria-label="View Casino 13 full size">
+          <img src="img/casino-13.jpg" alt="Casino 13 thumbnail" loading="lazy" width="1280" height="720">
+        </button>
+        <figcaption>Casino 13</figcaption>
+      </figure>
+      <figure class="item" data-group="casino" data-index="14">
+        <button class="thumb" type="button" data-full="img/casino-14.jpg" data-caption="Casino 14" aria-label="View Casino 14 full size">
+          <img src="img/casino-14.jpg" alt="Casino 14 thumbnail" loading="lazy" width="1280" height="720">
+        </button>
+        <figcaption>Casino 14</figcaption>
+      </figure>
+      <figure class="item" data-group="casino" data-index="15">
+        <button class="thumb" type="button" data-full="img/casino-15.jpg" data-caption="Casino 15" aria-label="View Casino 15 full size">
+          <img src="img/casino-15.jpg" alt="Casino 15 thumbnail" loading="lazy" width="1280" height="720">
+        </button>
+        <figcaption>Casino 15</figcaption>
+      </figure>
+      <figure class="item" data-group="roblox" data-index="1">
+        <button class="thumb" type="button" data-full="img/roblox-01.jpg" data-caption="Roblox 01" aria-label="View Roblox 01 full size">
+          <img src="img/roblox-01.jpg" alt="Roblox 01 thumbnail" loading="lazy" width="1280" height="720">
+        </button>
+        <figcaption>Roblox 01</figcaption>
+      </figure>
+      <figure class="item" data-group="roblox" data-index="2">
+        <button class="thumb" type="button" data-full="img/roblox-02.jpg" data-caption="Roblox 02" aria-label="View Roblox 02 full size">
+          <img src="img/roblox-02.jpg" alt="Roblox 02 thumbnail" loading="lazy" width="1280" height="720">
+        </button>
+        <figcaption>Roblox 02</figcaption>
+      </figure>
+      <figure class="item" data-group="roblox" data-index="3">
+        <button class="thumb" type="button" data-full="img/roblox-03.jpg" data-caption="Roblox 03" aria-label="View Roblox 03 full size">
+          <img src="img/roblox-03.jpg" alt="Roblox 03 thumbnail" loading="lazy" width="1280" height="720">
+        </button>
+        <figcaption>Roblox 03</figcaption>
+      </figure>
+      <figure class="item" data-group="roblox" data-index="4">
+        <button class="thumb" type="button" data-full="img/roblox-04.jpg" data-caption="Roblox 04" aria-label="View Roblox 04 full size">
+          <img src="img/roblox-04.jpg" alt="Roblox 04 thumbnail" loading="lazy" width="1280" height="720">
+        </button>
+        <figcaption>Roblox 04</figcaption>
+      </figure>
+      <figure class="item" data-group="roblox" data-index="5">
+        <button class="thumb" type="button" data-full="img/roblox-05.jpg" data-caption="Roblox 05" aria-label="View Roblox 05 full size">
+          <img src="img/roblox-05.jpg" alt="Roblox 05 thumbnail" loading="lazy" width="716" height="402">
+        </button>
+        <figcaption>Roblox 05</figcaption>
+      </figure>
+      <figure class="item" data-group="roblox" data-index="6">
+        <button class="thumb" type="button" data-full="img/roblox-06.jpg" data-caption="Roblox 06" aria-label="View Roblox 06 full size">
+          <img src="img/roblox-06.jpg" alt="Roblox 06 thumbnail" loading="lazy" width="1280" height="720">
+        </button>
+        <figcaption>Roblox 06</figcaption>
+      </figure>
+      <figure class="item" data-group="general" data-index="1">
+        <button class="thumb" type="button" data-full="img/general-01.jpg" data-caption="General 01" aria-label="View General 01 full size">
+          <img src="img/general-01.jpg" alt="General 01 thumbnail" loading="lazy" width="1280" height="714">
+        </button>
+        <figcaption>General 01</figcaption>
+      </figure>
+      <figure class="item" data-group="general" data-index="2">
+        <button class="thumb" type="button" data-full="img/general-02.jpg" data-caption="General 02" aria-label="View General 02 full size">
+          <img src="img/general-02.jpg" alt="General 02 thumbnail" loading="lazy" width="1280" height="720">
+        </button>
+        <figcaption>General 02</figcaption>
+      </figure>
+      <figure class="item" data-group="general" data-index="3">
+        <button class="thumb" type="button" data-full="img/general-03.jpg" data-caption="General 03" aria-label="View General 03 full size">
+          <img src="img/general-03.jpg" alt="General 03 thumbnail" loading="lazy" width="1080" height="625">
+        </button>
+        <figcaption>General 03</figcaption>
+      </figure>
+      <figure class="item" data-group="general" data-index="4">
+        <button class="thumb" type="button" data-full="img/general-04.jpg" data-caption="General 04" aria-label="View General 04 full size">
+          <img src="img/general-04.jpg" alt="General 04 thumbnail" loading="lazy" width="1280" height="720">
+        </button>
+        <figcaption>General 04</figcaption>
+      </figure>
+      <figure class="item" data-group="general" data-index="5">
+        <button class="thumb" type="button" data-full="img/general-05.jpg" data-caption="General 05" aria-label="View General 05 full size">
+          <img src="img/general-05.jpg" alt="General 05 thumbnail" loading="lazy" width="1127" height="1280">
+        </button>
+        <figcaption>General 05</figcaption>
+      </figure>
+      <figure class="item" data-group="general" data-index="6">
+        <button class="thumb" type="button" data-full="img/general-06.jpg" data-caption="General 06" aria-label="View General 06 full size">
+          <img src="img/general-06.jpg" alt="General 06 thumbnail" loading="lazy" width="1280" height="720">
+        </button>
+        <figcaption>General 06</figcaption>
+      </figure>
+      <figure class="item" data-group="general" data-index="7">
+        <button class="thumb" type="button" data-full="img/general-07.jpg" data-caption="General 07" aria-label="View General 07 full size">
+          <img src="img/general-07.jpg" alt="General 07 thumbnail" loading="lazy" width="1280" height="714">
+        </button>
+        <figcaption>General 07</figcaption>
+      </figure>
+      <figure class="item" data-group="general" data-index="8">
+        <button class="thumb" type="button" data-full="img/general-08.jpg" data-caption="General 08" aria-label="View General 08 full size">
+          <img src="img/general-08.jpg" alt="General 08 thumbnail" loading="lazy" width="1280" height="720">
+        </button>
+        <figcaption>General 08</figcaption>
+      </figure>
+      <figure class="item" data-group="general" data-index="9">
+        <button class="thumb" type="button" data-full="img/general-09.jpg" data-caption="General 09" aria-label="View General 09 full size">
+          <img src="img/general-09.jpg" alt="General 09 thumbnail" loading="lazy" width="1280" height="720">
+        </button>
+        <figcaption>General 09</figcaption>
+      </figure>
+      <figure class="item" data-group="general" data-index="10">
+        <button class="thumb" type="button" data-full="img/general-10.jpg" data-caption="General 10" aria-label="View General 10 full size">
+          <img src="img/general-10.jpg" alt="General 10 thumbnail" loading="lazy" width="1280" height="720">
+        </button>
+        <figcaption>General 10</figcaption>
+      </figure>
+      <figure class="item" data-group="general" data-index="11">
+        <button class="thumb" type="button" data-full="img/general-11.jpg" data-caption="General 11" aria-label="View General 11 full size">
+          <img src="img/general-11.jpg" alt="General 11 thumbnail" loading="lazy" width="1200" height="675">
+        </button>
+        <figcaption>General 11</figcaption>
+      </figure>
+      <figure class="item" data-group="general" data-index="12">
+        <button class="thumb" type="button" data-full="img/general-12.jpg" data-caption="General 12" aria-label="View General 12 full size">
+          <img src="img/general-12.jpg" alt="General 12 thumbnail" loading="lazy" width="1200" height="675">
+        </button>
+        <figcaption>General 12</figcaption>
+      </figure>
+      <figure class="item" data-group="general" data-index="13">
+        <button class="thumb" type="button" data-full="img/general-13.jpg" data-caption="General 13" aria-label="View General 13 full size">
+          <img src="img/general-13.jpg" alt="General 13 thumbnail" loading="lazy" width="1280" height="720">
+        </button>
+        <figcaption>General 13</figcaption>
+      </figure>
+      <figure class="item" data-group="general" data-index="14">
+        <button class="thumb" type="button" data-full="img/general-14.jpg" data-caption="General 14" aria-label="View General 14 full size">
+          <img src="img/general-14.jpg" alt="General 14 thumbnail" loading="lazy" width="1280" height="714">
+        </button>
+        <figcaption>General 14</figcaption>
+      </figure>
+      <figure class="item" data-group="general" data-index="15">
+        <button class="thumb" type="button" data-full="img/general-15.jpg" data-caption="General 15" aria-label="View General 15 full size">
+          <img src="img/general-15.jpg" alt="General 15 thumbnail" loading="lazy" width="1280" height="720">
+        </button>
+        <figcaption>General 15</figcaption>
+      </figure>
+      <figure class="item" data-group="general" data-index="16">
+        <button class="thumb" type="button" data-full="img/general-16.jpg" data-caption="General 16" aria-label="View General 16 full size">
+          <img src="img/general-16.jpg" alt="General 16 thumbnail" loading="lazy" width="1280" height="720">
+        </button>
+        <figcaption>General 16</figcaption>
+      </figure>
+      <figure class="item" data-group="general" data-index="17">
+        <button class="thumb" type="button" data-full="img/general-17.jpg" data-caption="General 17" aria-label="View General 17 full size">
+          <img src="img/general-17.jpg" alt="General 17 thumbnail" loading="lazy" width="1280" height="719">
+        </button>
+        <figcaption>General 17</figcaption>
+      </figure>
+      <figure class="item" data-group="general" data-index="18">
+        <button class="thumb" type="button" data-full="img/general-18.jpg" data-caption="General 18" aria-label="View General 18 full size">
+          <img src="img/general-18.jpg" alt="General 18 thumbnail" loading="lazy" width="1280" height="720">
+        </button>
+        <figcaption>General 18</figcaption>
+      </figure>
+      <figure class="item" data-group="general" data-index="19">
+        <button class="thumb" type="button" data-full="img/general-19.jpg" data-caption="General 19" aria-label="View General 19 full size">
+          <img src="img/general-19.jpg" alt="General 19 thumbnail" loading="lazy" width="1280" height="720">
+        </button>
+        <figcaption>General 19</figcaption>
+      </figure>
+      <figure class="item" data-group="general" data-index="20">
+        <button class="thumb" type="button" data-full="img/general-20.jpg" data-caption="General 20" aria-label="View General 20 full size">
+          <img src="img/general-20.jpg" alt="General 20 thumbnail" loading="lazy" width="1280" height="719">
+        </button>
+        <figcaption>General 20</figcaption>
+      </figure>
+      <figure class="item" data-group="general" data-index="21">
+        <button class="thumb" type="button" data-full="img/general-21.jpg" data-caption="General 21" aria-label="View General 21 full size">
+          <img src="img/general-21.jpg" alt="General 21 thumbnail" loading="lazy" width="1280" height="720">
+        </button>
+        <figcaption>General 21</figcaption>
+      </figure>
+      <figure class="item" data-group="general" data-index="22">
+        <button class="thumb" type="button" data-full="img/general-22.jpg" data-caption="General 22" aria-label="View General 22 full size">
+          <img src="img/general-22.jpg" alt="General 22 thumbnail" loading="lazy" width="1280" height="714">
+        </button>
+        <figcaption>General 22</figcaption>
+      </figure>
+      <figure class="item" data-group="general" data-index="23">
+        <button class="thumb" type="button" data-full="img/general-23.jpg" data-caption="General 23" aria-label="View General 23 full size">
+          <img src="img/general-23.jpg" alt="General 23 thumbnail" loading="lazy" width="1280" height="714">
+        </button>
+        <figcaption>General 23</figcaption>
+      </figure>
+      <figure class="item" data-group="general" data-index="24">
+        <button class="thumb" type="button" data-full="img/general-24.jpg" data-caption="General 24" aria-label="View General 24 full size">
+          <img src="img/general-24.jpg" alt="General 24 thumbnail" loading="lazy" width="1280" height="714">
+        </button>
+        <figcaption>General 24</figcaption>
+      </figure>
+      <figure class="item" data-group="general" data-index="25">
+        <button class="thumb" type="button" data-full="img/general-25.jpg" data-caption="General 25" aria-label="View General 25 full size">
+          <img src="img/general-25.jpg" alt="General 25 thumbnail" loading="lazy" width="1280" height="720">
+        </button>
+        <figcaption>General 25</figcaption>
+      </figure>
+      <figure class="item" data-group="general" data-index="26">
+        <button class="thumb" type="button" data-full="img/general-26.jpg" data-caption="General 26" aria-label="View General 26 full size">
+          <img src="img/general-26.jpg" alt="General 26 thumbnail" loading="lazy" width="1280" height="720">
+        </button>
+        <figcaption>General 26</figcaption>
+      </figure>
+    </main>
+    <footer>
+      <span>Kali — Video Editor</span>
+      <a href="mailto:kalidorxyz@gmail.com">kalidorxyz@gmail.com</a>
+    </footer>
+  </div>
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Thumbnail preview">
+    <button class="lb-close" id="lb-close" type="button" aria-label="Close">✕</button>
+    <button class="lb-btn lb-prev" id="lb-prev" type="button" aria-label="Previous">‹</button>
+    <img id="lb-img" src="" alt="">
+    <button class="lb-btn lb-next" id="lb-next" type="button" aria-label="Next">›</button>
+    <p class="cap" id="lb-cap"></p>
+  </div>
+  <script>
+    (function () {
+      var items = Array.prototype.slice.call(document.querySelectorAll(".item"));
+      document.querySelectorAll(".filter").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          document.querySelectorAll(".filter").forEach(function (b) { b.classList.remove("active"); });
+          btn.classList.add("active");
+          var f = btn.getAttribute("data-filter");
+          items.forEach(function (it) {
+            it.classList.toggle("hidden", f !== "all" && it.getAttribute("data-group") !== f);
+          });
+        });
+      });
+      var box = document.getElementById("lightbox"),
+          img = document.getElementById("lb-img"),
+          cap = document.getElementById("lb-cap"),
+          current = -1;
+      function visible() { return items.filter(function (it) { return !it.classList.contains("hidden"); }); }
+      function show(i) {
+        var list = visible();
+        if (!list.length) return;
+        current = ((i % list.length) + list.length) % list.length;
+        var b = list[current].querySelector(".thumb");
+        img.src = b.getAttribute("data-full");
+        img.alt = b.getAttribute("data-caption") + " thumbnail";
+        cap.textContent = b.getAttribute("data-caption");
+        box.classList.add("open");
+        document.body.style.overflow = "hidden";
+      }
+      function close() { box.classList.remove("open"); document.body.style.overflow = ""; }
+      items.forEach(function (it) {
+        it.querySelector(".thumb").addEventListener("click", function () { show(visible().indexOf(it)); });
+      });
+      document.getElementById("lb-close").addEventListener("click", close);
+      document.getElementById("lb-prev").addEventListener("click", function (e) { e.stopPropagation(); show(current - 1); });
+      document.getElementById("lb-next").addEventListener("click", function (e) { e.stopPropagation(); show(current + 1); });
+      box.addEventListener("click", function (e) { if (e.target === box) close(); });
+      document.addEventListener("keydown", function (e) {
+        if (!box.classList.contains("open")) return;
+        if (e.key === "Escape") close();
+        else if (e.key === "ArrowLeft") show(current - 1);
+        else if (e.key === "ArrowRight") show(current + 1);
+      });
+    })();
+  </script>
+</body>
+</html>
