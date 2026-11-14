@@ -3,50 +3,28 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="color-scheme" content="light dark">
-  <meta name="description" content="Kali — Thumbnail design samples: casino, Roblox and general YouTube thumbnails.">
+  <meta name="description" content="Kali — YouTube thumbnail design samples.">
   <link rel="icon" href="data:,">
   <title>Kali — Thumbnails</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Special+Elite&family=Karla:ital,wght@0,400;0,500;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
+    /* v4 (2026-11-14): orange + white, professional, 3D.
+       One 2-column grid, all 47 thumbnails together — no sections, no extra text.
+       Cards are white frames with layered shadows; hover / pointer tilt gives the 3D depth. */
     :root {
-      color-scheme: light dark;
-      --desk: #e8dfc8;
-      --desk-line: rgba(94, 74, 44, 0.10);
-      --paper: #fdfaf1;
-      --paper-2: #f7f1de;
-      --ink: #2e2a23;
-      --ink-soft: #5c5546;
-      --pencil: #8a7f68;
-      --red: #c0392b;
-      --blue-pen: #2456a6;
-      --tape: rgba(238, 220, 150, 0.75);
-      --tape-edge: rgba(190, 165, 90, 0.35);
-      --card-shadow: 0 2px 4px rgba(74, 58, 30, 0.14), 0 14px 28px rgba(74, 58, 30, 0.13);
-      --pin: #c0392b;
-      --placeholder-bg: repeating-linear-gradient(-45deg, rgba(94, 74, 44, 0.05) 0 10px, transparent 10px 20px);
-      --btn-ink: #fdfaf1;
-    }
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --desk: #221d16;
-        --desk-line: rgba(230, 214, 170, 0.07);
-        --paper: #322b20;
-        --paper-2: #2b251b;
-        --ink: #efe7d2;
-        --ink-soft: #c9bda0;
-        --pencil: #9a8c6e;
-        --red: #e0685a;
-        --blue-pen: #8db1ea;
-        --tape: rgba(214, 188, 108, 0.5);
-        --tape-edge: rgba(214, 188, 108, 0.3);
-        --card-shadow: 0 2px 4px rgba(0, 0, 0, 0.4), 0 14px 28px rgba(0, 0, 0, 0.35);
-        --pin: #e0685a;
-        --placeholder-bg: repeating-linear-gradient(-45deg, rgba(230, 214, 170, 0.05) 0 10px, transparent 10px 20px);
-        --btn-ink: #221d16;
-      }
+      --orange: #ff6a00;
+      --orange-deep: #d95500;
+      --orange-soft: #fff1e6;
+      --ink: #161616;
+      --line: #f0edea;
+      --shadow: 0 1px 2px rgba(22, 22, 22, 0.05),
+                0 10px 24px rgba(22, 22, 22, 0.08),
+                0 28px 56px rgba(255, 106, 0, 0.10);
+      --shadow-hover: 0 2px 4px rgba(22, 22, 22, 0.06),
+                      0 18px 36px rgba(22, 22, 22, 0.13),
+                      0 44px 88px rgba(255, 106, 0, 0.24);
     }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
@@ -56,333 +34,171 @@
     }
     body {
       margin: 0;
-      font-family: "Karla", system-ui, sans-serif;
+      background: #ffffff;
       color: var(--ink);
-      background-color: var(--desk);
-      background-image:
-        linear-gradient(var(--desk-line) 1px, transparent 1px),
-        linear-gradient(90deg, var(--desk-line) 1px, transparent 1px);
-      background-size: 34px 34px;
-      line-height: 1.55;
+      font-family: "Inter", system-ui, -apple-system, sans-serif;
+      -webkit-font-smoothing: antialiased;
     }
-    .hand { font-family: "Caveat", cursive; }
-    .type { font-family: "Special Elite", "Courier New", monospace; }
-    .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px 72px; }
-
-    /* ---------- Header sheet ---------- */
-    .sheet {
-      position: relative;
-      background: var(--paper);
-      box-shadow: var(--card-shadow);
-      margin-top: 34px;
-      padding: 52px 44px 44px;
-      transform: rotate(-0.4deg);
-      text-align: center;
-      clip-path: polygon(
-        0 0, 100% 0, 100% calc(100% - 7px),
-        97% 100%, 93% calc(100% - 5px), 88% 100%, 82% calc(100% - 6px),
-        76% 100%, 70% calc(100% - 4px), 64% 100%, 58% calc(100% - 6px),
-        52% 100%, 46% calc(100% - 5px), 40% 100%, 34% calc(100% - 6px),
-        28% 100%, 22% calc(100% - 4px), 16% 100%, 10% calc(100% - 6px),
-        5% 100%, 0 calc(100% - 5px)
-      );
+    .topbar { height: 4px; background: linear-gradient(90deg, var(--orange), #ff9a3d 60%, var(--orange)); }
+    header {
+      max-width: 1080px; margin: 0 auto;
+      padding: 26px 20px 4px;
+      display: flex; align-items: center; gap: 11px;
     }
-    .tape {
-      position: absolute;
-      width: 118px; height: 30px;
-      background: var(--tape);
-      border-left: 2px dashed var(--tape-edge);
-      border-right: 2px dashed var(--tape-edge);
-      opacity: 0.9;
-      z-index: 2;
-    }
-    .tape.tl { top: -14px; left: 26px; transform: rotate(-26deg); }
-    .tape.tr { top: -14px; right: 26px; transform: rotate(26deg); }
-    h1 {
-      font-size: clamp(2.6rem, 7vw, 4rem);
-      line-height: 1.02; margin: 0; font-weight: 800; letter-spacing: -0.02em;
-    }
-    .role {
-      font-size: clamp(1.05rem, 2.6vw, 1.3rem);
-      color: var(--ink-soft);
-      margin: 14px auto 0;
-      font-weight: 500;
-      max-width: 34em;
-    }
-    .role strong { color: var(--ink); }
-    .hand-note {
-      font-size: 1.5rem; color: var(--blue-pen);
-      margin: 18px 0 0; transform: rotate(-1deg);
-    }
-    .mail { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--ink); font-size: 15px; }
-    .mail:hover { color: var(--red); border-color: var(--red); }
-
-    /* ---------- Statue (own band on the desk, never overlaps the cards) ---------- */
-    .statue { text-align: center; margin: 34px 0 0; }
-    .statue img {
-      display: block; margin: 0 auto;
-      height: clamp(230px, 40vh, 330px); width: auto; max-width: 92vw; object-fit: contain;
-      filter: drop-shadow(0 18px 22px rgba(40, 28, 10, 0.35));
-    }
-    .statue .hand-note { margin-top: 2px; }
-
-    /* ---------- Nav ---------- */
-    nav.sections {
-      display: flex; flex-wrap: wrap; gap: 12px; justify-content: center;
-      margin: 44px 0 0;
-    }
-    nav.sections a {
-      background: var(--paper);
-      color: var(--ink);
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 0.95rem;
-      padding: 9px 18px 10px;
+    .mark {
+      width: 13px; height: 13px; flex: none;
+      background: var(--orange);
       border-radius: 3px;
-      box-shadow: 0 2px 5px rgba(74, 58, 30, 0.18);
-      transition: transform 0.15s ease;
+      box-shadow: 2px 2px 0 var(--orange-deep);
     }
-    nav.sections a:nth-child(odd) { transform: rotate(-1.2deg); }
-    nav.sections a:nth-child(even) { transform: rotate(1deg); }
-    nav.sections a:hover { transform: rotate(0deg) translateY(-2px); color: var(--red); }
+    .wordmark { font-weight: 800; font-size: 21px; letter-spacing: 0.16em; line-height: 1; }
+    .wordmark b { color: var(--orange); font-weight: 800; }
 
-    /* ---------- Sections ---------- */
-    section.cat { margin-top: 58px; scroll-margin-top: 24px; }
-    .cat-head { display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap; }
-    .cat-num {
-      font-family: "Special Elite", monospace;
-      color: var(--btn-ink);
-      background: var(--red);
-      padding: 3px 10px 1px;
-      font-size: 0.95rem;
-      transform: rotate(-3deg);
-      border-radius: 2px;
-      box-shadow: 0 2px 4px rgba(74, 58, 30, 0.3);
+    /* ---------- 2-column grid ---------- */
+    .grid {
+      max-width: 1080px; margin: 0 auto;
+      padding: 22px 20px 72px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      perspective: 1400px;
     }
-    h2.cat-title {
-      font-size: clamp(1.9rem, 5.5vw, 2.7rem);
-      margin: 0;
-      font-weight: 800;
-      letter-spacing: -0.015em;
-    }
-    .cat-rule {
-      height: 3px; margin-top: 16px;
-      background-image: linear-gradient(90deg, var(--red) 0 46px, var(--pencil) 46px);
-      opacity: 0.65;
-      border-radius: 2px;
-    }
-
-    /* ---------- 3D carousel (same as the video portfolio) ---------- */
-    .carousel { margin-top: 30px; }
-    .carousel:focus-visible { outline: 2px dashed var(--red); outline-offset: 4px; border-radius: 2px; }
-    .stage {
-      position: relative;
-      height: 292px;
-      perspective: 1150px;
-      overflow: hidden;
-    }
-    .track { position: absolute; inset: 0; }
     .card {
-      position: absolute;
-      left: 50%; top: 50%;
-      width: min(340px, 80vw);
-      transform: translate(-50%, -50%);
-      background: var(--paper);
-      padding: 14px 14px 18px;
-      box-shadow: var(--card-shadow);
-      border-radius: 2px;
-      backface-visibility: hidden;
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 10px;
+      box-shadow: var(--shadow);
+      cursor: pointer;
+      transform-style: preserve-3d;
+      transition: transform 0.4s cubic-bezier(0.22, 0.9, 0.28, 1.25),
+                  box-shadow 0.4s ease,
+                  border-color 0.3s ease;
       will-change: transform;
-      cursor: pointer;
-    }
-    .c-controls {
-      display: flex; align-items: center; justify-content: center;
-      gap: 20px; margin-top: 2px;
-    }
-    .c-btn {
-      width: 46px; height: 46px; flex: none;
-      border-radius: 50%;
-      border: 2px solid var(--ink);
-      background: var(--paper);
-      color: var(--ink);
-      display: inline-flex; align-items: center; justify-content: center;
-      cursor: pointer;
-      box-shadow: 0 2px 5px rgba(74, 58, 30, 0.18);
-      transition: transform 0.15s ease, color 0.15s ease, border-color 0.15s ease;
-    }
-    .c-btn:hover { color: var(--red); border-color: var(--red); transform: translateY(-2px); }
-    .c-dots { display: flex; align-items: center; gap: 9px; flex-wrap: wrap; justify-content: center; }
-    .c-dot {
-      width: 10px; height: 10px; padding: 0;
-      border: none; border-radius: 50%;
-      background: var(--pencil); opacity: 0.4;
-      cursor: pointer;
-      transition: opacity 0.2s ease, background 0.2s ease, transform 0.2s ease;
-    }
-    .c-dot:hover { opacity: 0.75; }
-    .c-dot.active { background: var(--red); opacity: 1; transform: scale(1.3); }
-    @media (max-width: 560px) {
-      .stage { height: 268px; }
-      .c-btn { width: 42px; height: 42px; }
-    }
-    .card .tape {
-      width: 84px; height: 22px;
-      top: -10px; left: 50%; margin-left: -42px;
-      transform: rotate(-2deg);
-    }
-    .card .pin {
-      position: absolute; top: -8px; left: 50%; margin-left: -7px;
-      width: 14px; height: 14px; border-radius: 50%;
-      background: radial-gradient(circle at 35% 30%, #ff9d8f, var(--pin) 70%);
-      box-shadow: 0 3px 4px rgba(0,0,0,0.3);
-      z-index: 2;
     }
     .card img {
       display: block;
       width: 100%;
       aspect-ratio: 16 / 9;
       object-fit: cover;
-      background: #000;
-      border-radius: 2px;
+      background: #111111;
+      border-radius: 10px;
+      transform: translateZ(26px);
     }
-    .card .caption {
-      margin: 12px 0 0;
-      font-size: 0.95rem;
-      font-weight: 700;
-      text-align: center;
+    .card:hover, .card.tilted {
+      border-color: rgba(255, 106, 0, 0.45);
+      box-shadow: var(--shadow-hover);
     }
-
-    footer { margin-top: 64px; text-align: center; color: var(--ink-soft); font-size: 14px; }
-    footer a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--ink); }
+    @media (max-width: 520px) {
+      .grid { gap: 12px; padding: 16px 12px 56px; }
+      .card { border-radius: 12px; padding: 7px; }
+      .card img { border-radius: 8px; }
+      header { padding: 20px 14px 2px; }
+    }
 
     /* ---------- lightbox ---------- */
-    .lightbox { position: fixed; inset: 0; z-index: 10; display: none; align-items: center; justify-content: center;
-      background: rgba(20, 16, 10, 0.94); padding: 20px; }
+    .lightbox {
+      position: fixed; inset: 0; z-index: 10;
+      display: none; align-items: center; justify-content: center;
+      background: rgba(16, 12, 8, 0.94); padding: 20px;
+    }
     .lightbox.open { display: flex; }
-    .lightbox img { max-width: 94vw; max-height: 86vh; object-fit: contain; background: #000; border-radius: 2px; }
-    .lightbox .cap { position: absolute; left: 0; right: 0; bottom: 18px; text-align: center; color: #ddd; font-size: 14px; }
-    .lb-btn { position: absolute; top: 50%; transform: translateY(-50%); width: 44px; height: 44px;
-      border: 1px solid rgba(255,255,255,.4); border-radius: 50%; background: transparent; color: #fff;
-      font-size: 20px; cursor: pointer; }
-    .lb-btn:hover { background: rgba(255,255,255,.12); }
+    .lightbox img {
+      max-width: 94vw; max-height: 86vh;
+      object-fit: contain; background: #000;
+      border-radius: 6px;
+      box-shadow: 0 24px 64px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(255, 106, 0, 0.35);
+    }
+    .lb-btn {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      width: 44px; height: 44px;
+      border: 1px solid rgba(255, 255, 255, 0.4); border-radius: 50%;
+      background: transparent; color: #fff;
+      font-size: 20px; cursor: pointer;
+    }
+    .lb-btn:hover { background: rgba(255, 106, 0, 0.35); border-color: var(--orange); }
     .lb-prev { left: 16px; } .lb-next { right: 16px; }
-    .lb-close { position: absolute; top: 16px; right: 16px; width: 40px; height: 40px; border: 1px solid rgba(255,255,255,.4);
-      border-radius: 50%; background: transparent; color: #fff; font-size: 18px; cursor: pointer; }
+    .lb-close {
+      position: absolute; top: 16px; right: 16px;
+      width: 40px; height: 40px;
+      border: 1px solid rgba(255, 255, 255, 0.4); border-radius: 50%;
+      background: transparent; color: #fff; font-size: 18px; cursor: pointer;
+    }
+    .lb-close:hover { background: rgba(255, 106, 0, 0.35); border-color: var(--orange); }
     @media (max-width: 560px) { .lb-prev { left: 6px; } .lb-next { right: 6px; } }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <header class="sheet">
-      <span class="tape tl" aria-hidden="true"></span>
-      <span class="tape tr" aria-hidden="true"></span>
-      <p class="type" style="margin:0 0 10px; letter-spacing:.18em; font-size:12px; color:var(--ink-soft);">KALI — THUMBNAIL DESIGN</p>
-      <h1>Thumbnails</h1>
-      <p class="role">A selection of YouTube thumbnail designs — <strong>casino, Roblox and more.</strong></p>
-      <p class="hand hand-note">click a thumbnail to view it full size ↓</p>
-      <p style="margin:16px 0 0;"><a class="mail" href="mailto:kalidorxyz@gmail.com">kalidorxyz@gmail.com</a></p>
-    </header>
+  <div class="topbar" aria-hidden="true"></div>
+  <header>
+    <span class="mark" aria-hidden="true"></span>
+    <span class="wordmark">KALI<b>.</b></span>
+  </header>
 
-    <div class="statue" aria-label="Statue">
-      <img src="img/statue.png" alt="Marble statue wearing sunglasses, working on a laptop" width="760" height="1140">
-      <p class="hand hand-note">Thumbnails that get clicks</p>
-    </div>
-
-    <nav class="sections" aria-label="Thumbnail sections">
-      <a href="#casino">Casino</a>
-      <a href="#roblox">Roblox</a>
-      <a href="#general">General</a>
-    </nav>
-
-    <section class="cat" id="casino">
-      <div class="cat-head">
-        <span class="cat-num">No. 1</span>
-        <h2 class="cat-title">Casino</h2>
-      </div>
-      <div class="cat-rule" aria-hidden="true"></div>
-      <div class="carousel" data-carousel tabindex="0" role="group" aria-roledescription="carousel" aria-label="Casino thumbnails">
-        <div class="stage"><div class="track" id="track-casino"></div></div>
-        <div class="c-controls">
-          <button type="button" class="c-btn prev" aria-label="Previous">‹</button>
-          <div class="c-dots"></div>
-          <button type="button" class="c-btn next" aria-label="Next">›</button>
-        </div>
-      </div>
-    </section>
-
-    <section class="cat" id="roblox">
-      <div class="cat-head">
-        <span class="cat-num">No. 2</span>
-        <h2 class="cat-title">Roblox</h2>
-      </div>
-      <div class="cat-rule" aria-hidden="true"></div>
-      <div class="carousel" data-carousel tabindex="0" role="group" aria-roledescription="carousel" aria-label="Roblox thumbnails">
-        <div class="stage"><div class="track" id="track-roblox"></div></div>
-        <div class="c-controls">
-          <button type="button" class="c-btn prev" aria-label="Previous">‹</button>
-          <div class="c-dots"></div>
-          <button type="button" class="c-btn next" aria-label="Next">›</button>
-        </div>
-      </div>
-    </section>
-
-    <section class="cat" id="general">
-      <div class="cat-head">
-        <span class="cat-num">No. 3</span>
-        <h2 class="cat-title">General</h2>
-      </div>
-      <div class="cat-rule" aria-hidden="true"></div>
-      <div class="carousel" data-carousel tabindex="0" role="group" aria-roledescription="carousel" aria-label="General thumbnails">
-        <div class="stage"><div class="track" id="track-general"></div></div>
-        <div class="c-controls">
-          <button type="button" class="c-btn prev" aria-label="Previous">‹</button>
-          <div class="c-dots"></div>
-          <button type="button" class="c-btn next" aria-label="Next">›</button>
-        </div>
-      </div>
-    </section>
-
-    <footer>
-      <span>Kali — Video Editor</span> · <a href="mailto:kalidorxyz@gmail.com">kalidorxyz@gmail.com</a>
-    </footer>
-  </div>
+  <main class="grid" id="grid" aria-label="Thumbnail samples"></main>
 
   <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Thumbnail preview">
     <button class="lb-close" id="lb-close" type="button" aria-label="Close">✕</button>
     <button class="lb-btn lb-prev" id="lb-prev" type="button" aria-label="Previous">‹</button>
     <img id="lb-img" src="" alt="">
     <button class="lb-btn lb-next" id="lb-next" type="button" aria-label="Next">›</button>
-    <p class="cap" id="lb-cap"></p>
   </div>
 
   <script>
     (function () {
       var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       var GROUPS = [
-        { slug: "casino", label: "Casino", count: 15 },
-        { slug: "roblox", label: "Roblox", count: 6 },
-        { slug: "general", label: "General", count: 26 }
+        { slug: "casino", count: 15 },
+        { slug: "roblox", count: 6 },
+        { slug: "general", count: 26 }
       ];
       var items = [];
       GROUPS.forEach(function (g) {
         for (var i = 1; i <= g.count; i++) {
           var n = ("0" + i).slice(-2);
-          items.push({ group: g.slug, label: g.label + " " + n, src: "img/" + g.slug + "-" + n + ".jpg" });
+          items.push({ src: "img/" + g.slug + "-" + n + ".jpg", alt: g.slug + " " + n + " thumbnail" });
         }
       });
+
+      var grid = document.getElementById("grid");
+      items.forEach(function (it, i) {
+        var card = document.createElement("article");
+        card.className = "card";
+        card.innerHTML = '<img src="' + it.src + '" alt="' + it.alt + '" decoding="async">';
+        card.addEventListener("click", function () { show(i); });
+        grid.appendChild(card);
+      });
+      var cards = Array.prototype.slice.call(grid.querySelectorAll(".card"));
+
+      /* ---------- 3D pointer tilt (mouse/pen only — touch drags scroll, never tilt) ---------- */
+      if (!reduceMotion) {
+        cards.forEach(function (card) {
+          card.addEventListener("pointermove", function (e) {
+            if (e.pointerType && e.pointerType !== "mouse" && e.pointerType !== "pen") return;
+            var r = card.getBoundingClientRect();
+            var px = (e.clientX - r.left) / r.width - 0.5;
+            var py = (e.clientY - r.top) / r.height - 0.5;
+            card.classList.add("tilted");
+            card.style.transform =
+              "translateY(-8px) rotateX(" + (-py * 7).toFixed(2) + "deg) rotateY(" + (px * 7).toFixed(2) + "deg)";
+          });
+          card.addEventListener("pointerleave", function () {
+            card.classList.remove("tilted");
+            card.style.transform = "";
+          });
+        });
+      }
 
       /* ---------- lightbox ---------- */
       var box = document.getElementById("lightbox"),
           lbImg = document.getElementById("lb-img"),
-          lbCap = document.getElementById("lb-cap"),
-          lbList = items, lbCurrent = -1;
+          lbCurrent = -1;
       function show(i) {
-        if (!lbList.length) return;
-        lbCurrent = ((i % lbList.length) + lbList.length) % lbList.length;
-        var it = lbList[lbCurrent];
+        if (!items.length) return;
+        lbCurrent = ((i % items.length) + items.length) % items.length;
+        var it = items[lbCurrent];
         lbImg.src = it.src;
-        lbImg.alt = it.label + " thumbnail";
-        lbCap.textContent = it.label;
+        lbImg.alt = it.alt;
         box.classList.add("open");
         document.body.style.overflow = "hidden";
       }
@@ -396,114 +212,6 @@
         if (e.key === "Escape") close();
         else if (e.key === "ArrowLeft") show(lbCurrent - 1);
         else if (e.key === "ArrowRight") show(lbCurrent + 1);
-      });
-
-      /* ---------- carousels (same engine as the video portfolio) ---------- */
-      var ANGLE = 38;
-      function wrapOff(d, n) {
-        d = ((d % n) + n) % n;
-        if (d > n / 2) d -= n;
-        return d;
-      }
-
-      document.querySelectorAll("[data-carousel]").forEach(function (root) {
-        var stage = root.querySelector(".stage");
-        var track = root.querySelector(".track");
-        var slug = track.id.replace("track-", "");
-        var list = items.filter(function (it) { return it.group === slug; });
-        var n = list.length;
-
-        list.forEach(function (it, i) {
-          var card = document.createElement("article");
-          card.className = "card";
-          card.innerHTML =
-            (i % 2 === 0 ? '<span class="tape" aria-hidden="true"></span>' : '<span class="pin" aria-hidden="true"></span>') +
-            '<img src="' + it.src + '" alt="' + it.label + ' thumbnail" decoding="async">' +
-            '<p class="caption">' + it.label + "</p>";
-          track.appendChild(card);
-        });
-        var cards = Array.prototype.slice.call(track.querySelectorAll(".card"));
-
-        var current = 0, target = 0, spacing = 210, raf = null;
-        var dotsWrap = root.querySelector(".c-dots");
-        var dots = cards.map(function (_, i) {
-          var b = document.createElement("button");
-          b.type = "button";
-          b.className = "c-dot";
-          b.setAttribute("aria-label", "Show sample " + (i + 1));
-          b.addEventListener("click", function () { goTo(i); });
-          dotsWrap.appendChild(b);
-          return b;
-        });
-
-        function measure() {
-          var w = cards[0].offsetWidth || 320;
-          spacing = Math.round(w * 0.62);
-        }
-        function render() {
-          for (var i = 0; i < n; i++) {
-            var off = wrapOff(i - current, n);
-            var abs = Math.abs(off);
-            var el = cards[i];
-            var scale = 1 - Math.min(abs, 2) * 0.09;
-            el.style.transform =
-              "translate(-50%, -50%) translateX(" + (off * spacing) + "px)" +
-              " rotateY(" + (-off * ANGLE) + "deg) scale(" + scale + ")";
-            el.style.zIndex = String(100 - Math.round(abs * 10));
-            el.style.opacity = abs > 1.7 ? "0" : String(1 - Math.min(abs * 0.18, 0.35));
-            el.setAttribute("aria-hidden", abs > 0.5 ? "true" : "false");
-          }
-          var active = ((Math.round(target) % n) + n) % n;
-          dots.forEach(function (d, i) { d.classList.toggle("active", i === active); });
-        }
-        function tick() {
-          current += (target - current) * 0.13;
-          if (Math.abs(target - current) < 0.002) {
-            current = target;
-            render();
-            raf = null;
-            return;
-          }
-          render();
-          raf = requestAnimationFrame(tick);
-        }
-        function kick() {
-          if (reduceMotion) { current = target; render(); return; }
-          if (!raf) raf = requestAnimationFrame(tick);
-        }
-        function goTo(i) {
-          var base = Math.round(target);
-          target = base + wrapOff(i - base, n);
-          kick();
-        }
-        root.querySelector(".prev").addEventListener("click", function () { target -= 1; kick(); });
-        root.querySelector(".next").addEventListener("click", function () { target += 1; kick(); });
-
-        cards.forEach(function (el, i) {
-          el.addEventListener("click", function () {
-            var off = wrapOff(i - Math.round(target), n);
-            if (off !== 0) { target += off; kick(); return; }
-            lbList = list;
-            show(i);
-          });
-        });
-        root.addEventListener("keydown", function (e) {
-          if (box.classList.contains("open")) return;
-          if (e.key === "ArrowLeft") { target -= 1; kick(); e.preventDefault(); }
-          else if (e.key === "ArrowRight") { target += 1; kick(); e.preventDefault(); }
-        });
-        var startX = null;
-        stage.addEventListener("touchstart", function (e) { startX = e.touches[0].clientX; }, { passive: true });
-        stage.addEventListener("touchend", function (e) {
-          if (startX === null) return;
-          var dx = e.changedTouches[0].clientX - startX;
-          if (Math.abs(dx) > 40) { target += (dx < 0 ? 1 : -1); kick(); }
-          startX = null;
-        }, { passive: true });
-        window.addEventListener("resize", function () { measure(); render(); });
-
-        measure();
-        render();
       });
     })();
   </script>
